@@ -2,6 +2,7 @@ from flask import (Blueprint, request, jsonify)
 from .models import (db, User, Comment, Blog, Notify)
 from flask_jwt_extended import (create_access_token, current_user, jwt_required)
 import arrow
+from flask_cors import cross_origin
 
 app_com = Blueprint("comment_section", __name__)
 
