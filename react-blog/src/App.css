@@ -1,0 +1,155 @@
+:root{
+    --navbar1:rgba(40, 100, 180, 1.0);
+    --button1:rgba(50, 120, 40, 0.8);
+    --hover1:rgba(10, 40, 120, 0.8);
+    
+}
+
+*{
+    list-style:none;
+    text-decoration:none;
+    transition: all 0.2s;
+}
+
+body{
+    margin:0;
+    background-color:lightblue;
+    overflow-x:hidden;
+}
+
+#navbar-profile{
+    text-transform:capitalize;
+}
+
+
+#navbar{
+    display:flex;
+    flex-direction:row;
+    height:40px;
+    width:100%;
+    position:fixed;
+    background-color:var(--navbar1);
+    top:-15px;
+    justify-content:center;
+    z-index:100;
+}
+
+#navbar .navbar-li a{
+    margin:10px 10px 5px 10px;
+    color:#fff;
+}
+
+
+#navbar .navbar-li a:hover{
+    
+    color:lightgreen;
+    transition:0.2s ease-in;
+    
+    
+}
+
+#form-container{
+    
+    width:50%;
+    padding:5px;
+    border-radius:10px;
+    margin:10px;
+    background-color:var(--navbar1);
+    min-height:200px;
+    
+    
+}
+
+#form-container label{
+    
+    color:#fff;
+    text-transform:capitalize;
+    position:relative;
+    top:8px;
+}
+
+#form-container input{
+    margin:10px;
+    outline:none;
+}
+
+
+#form-container input{
+    width:50%;
+}
+
+input[type='submit'], input[type='button']{
+    
+    padding:5px;
+    border-radius:10px;
+    color:#fff;
+    background-color:var(--button1);
+    border:3px solid #fff;
+    font-weight:bold;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.2s ease-out;
+}
+
+
+input[type='submit']:hover, input[type='button']:hover{
+    
+    border-radius:0px;
+    background-color:var(--hover1);
+    border:3px solid #fff;
+
+    transition:0.2s ease-in;
+}
+
+
+#form-container input:not([type='submit'], [type='button']){
+    height:30px;
+    font-size:16px;
+}
+
+#form-container input::placeholder{
+    font-size:16px;
+}
+
+
+@media screen and (max-width:1000px){
+    #form-container{
+        width:80%;
+    }
+    #form-container input{
+        width:80%;
+        transition:0.2s ease-in;
+    }
+}
+
+@media screen and (max-width:320px){
+    
+    #form-container{
+        width:95%;
+        padding:0px;
+        margin-left:0px;
+        margin-right:0px;
+    }
+    #form-container input{
+        width:85%;
+        transition:0.2s ease-in;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

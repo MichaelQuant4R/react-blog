@@ -1,0 +1,30 @@
+#blog-container{
+    
+    width:80%;
+    padding:5px;
+    display:flex;
+    place-items:center;
+    flex-direction:column;
+    border-radius:10px;
+    background-color:rgba(10, 80, 80, 0.8);
+    margin:5px;
+/*     justify-content:center; */
+    left:20%;
+    
+}
+
+#blog-container h4, h2{
+    
+    color:#fff;
+    font-size:20px;
+    
+    
+}
+
+#blog-author-image{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    border:3px solid #fff;
+    cursor:pointer;
+}
