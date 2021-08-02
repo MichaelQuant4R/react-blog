@@ -9,7 +9,7 @@ from flask_gravatar import Gravatar
 from flask_cors import CORS
 from datetime import datetime as dt
 from datetime import timedelta
-from config import (DATABASE_URL, JWT_SECRET_KEY)
+from .config import (DATABASE_URL, JWT_SECRET_KEY)
 
 app = Flask(__name__, static_folder="react-blog/build", static_url_path="")
 
