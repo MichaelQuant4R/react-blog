@@ -1,6 +1,5 @@
 from flask import (request, jsonify, send_from_directory)
-from flask_jwt_extended import (create_access_token, current_user, jwt_required)
-from .models import (db, User, Blog, Comment,  app, jwt)
+from .models import (db, User, Blog, Comment,  app, jwt, create_access_token, current_user, jwt_required)
 from .comment_section import app_com
 from .notify_section import app_bell
 from .blog_section import app_blog
@@ -19,19 +18,7 @@ def serve():
     return send_from_directory(app.static_folder, "index.html")
 
 
-@jwt.user_identity_loader
-def user_identity_lookup(user):
-    return user.id
 
-
-# Register a callback function that loades a user from your database whenever
-# a protected route is accessed. This should return any python object on a
-# successful lookup, or None if the lookup failed for any reason (for example
-# if the user has been deleted from the database).
-@jwt.user_lookup_loader
-def user_lookup_callback(_jwt_header, jwt_data):
-    identity = jwt_data["sub"]
-    return User.query.filter_by(id=identity).one_or_none()
 
 
 

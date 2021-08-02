@@ -9,7 +9,7 @@ from flask_gravatar import Gravatar
 from flask_cors import CORS
 from datetime import datetime as dt
 from datetime import timedelta
-from .config import (DATABASE_URL, JWT_SECRET_KEY)
+from config import (DATABASE_URL, JWT_SECRET_KEY)
 
 app = Flask(__name__, static_folder="react-blog/build", static_url_path="")
 
@@ -32,7 +32,7 @@ cors = CORS(app, support_credentials = True)
 #file_path = os.getcwd() + "\database.db"
 
 app.config["JWT_SECRET_KEY"] = JWT_SECRET_KEY
-app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
+app.config["SQLALCHEMY_DATABASE_URI"] =  DATABASE_URL
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["JWT_SECRET_KEY"] = "super-secret"  # Change this!
 app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)

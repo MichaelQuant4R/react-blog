@@ -1,5 +1,5 @@
 from flask import (Blueprint, request, jsonify)
-from .models import (db, User, Comment, Blog, Notify)
+from models import (db, User, Comment, Blog, Notify)
 from flask_jwt_extended import (create_access_token, current_user, jwt_required)
 import arrow
 
@@ -7,6 +7,7 @@ app_com = Blueprint("comment_section", __name__)
 
 
 @app_com.route("/api/new_comment", methods = ["POST"])
+@cross_origin
 @jwt_required()
 def new_comment():
     
@@ -51,6 +52,7 @@ def new_comment():
     return jsonify({"check": True, "new": com_data})
 
 @app_com.route("/api/get_comments/<int:blog_id>", methods = ["GET"])
+@cross_origin
 def get_comments(blog_id):
     
     print("GET ALL COMMENTS!")
