@@ -1,5 +1,5 @@
 from flask import (Blueprint, request, jsonify)
-from models import (db, User, Comment, Blog, Notify)
+from .models import (db, User, Comment, Blog, Notify)
 from flask_jwt_extended import (create_access_token, current_user, jwt_required)
 import arrow
 

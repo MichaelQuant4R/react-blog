@@ -1,9 +1,9 @@
 from flask import (request, jsonify, send_from_directory)
 from flask_jwt_extended import (create_access_token, current_user, jwt_required)
-from models import (db, User, Blog, Comment,  app, jwt)
-from comment_section import app_com
-from notify_section import app_bell
-from blog_section import app_blog
+from .models import (db, User, Blog, Comment,  app, jwt)
+from .comment_section import app_com
+from .notify_section import app_bell
+from .blog_section import app_blog
 from flask_cors import cross_origin
 
 app.register_blueprint(app_com)
