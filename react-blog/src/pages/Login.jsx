@@ -9,7 +9,7 @@ const Login = props => {
     
     const emailRef = React.useRef("");
     const passwordRef = React.useRef("");
-    
+    const urlPath = window.location.origin;
     const {user, setUser} = React.useContext(User);
     
     const history = useHistory();
@@ -23,7 +23,7 @@ const Login = props => {
         console.log(emailRef.current.value, passwordRef.current.value);
         
         
-                fetch("http://localhost:5000/api/login", {
+                fetch(`${urlPath}/api/login`, {
             
             method:"POST",
             mode:"cors",

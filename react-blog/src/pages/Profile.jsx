@@ -20,7 +20,8 @@ class Profile extends React.Component{
             loading:true,
             user:null,
             jwtId:null,
-            user:"No data"
+            user:"No data",
+            urlPath:window.location.origin
         }
         
         this.handleInfo = this.handleInfo.bind(this);
@@ -31,7 +32,7 @@ class Profile extends React.Component{
         console.log("HANDLE INFO!");
         console.log(username, id, sub);
         
-            fetch(`http://localhost:5000/api/view_profile/${username}/${id}`,{
+            fetch(`${this.state.urlPath}/api/view_profile/${username}/${id}`,{
                 method:"GET",
                 mode:"cors",
                 headers:{

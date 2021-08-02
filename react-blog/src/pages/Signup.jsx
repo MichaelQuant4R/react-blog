@@ -15,7 +15,7 @@ const Signup = props => {
     const [password, setPassword] = React.useState("");
     const [confirmPassword, setConfirmPassword] = React.useState("");
     const [isSignedUp, setIsSignedUp] = React.useState(false);
-    
+    const urlPath = window.location.origin;
     
     const handleSubmit = (e) => {
         
@@ -30,7 +30,7 @@ const Signup = props => {
         var passwordData = password["password"];
         var confirmPasswordData = confirmPassword["confirmPassword"];
 
-        fetch("http://localhost:5000/api/signup", {
+        fetch(`${urlPath}/api/signup`, {
             
             method:"POST",
             mode:"cors",

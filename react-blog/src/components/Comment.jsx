@@ -11,12 +11,12 @@ const Comment = props => {
     const {username, title, id} = useParams();
     
     const [comments, setComments] = React.useState([]);
-    
+    const urlPath = window.location.origin;
     
     const fetchComments = async (blogID) => {
         
         console.log("BLOG ID FETCH COMMENTS!", blogID);
-        fetch(`http://localhost:5000/api/get_comments/${blogID}`, {
+        fetch(`${urlPath}/api/get_comments/${blogID}`, {
             
             method: "GET",
             mode:"cors",
@@ -76,7 +76,7 @@ const Comment = props => {
         
         value.current.value = "";
         
-        fetch(`http://localhost:5000/api/new_comment`,{
+        fetch(`${urlPath}/api/new_comment`,{
             
             method:"POST",
             mode:"cors",

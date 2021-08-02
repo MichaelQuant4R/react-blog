@@ -187,7 +187,7 @@ const Bell = props => {
             console.log("USER ID", userId);
             
 
-            fetch(`http://localhost:5000/api/clear_bell_number`,{
+            fetch(`${urlPath}/api/clear_bell_number`,{
                 method:"POST",
                 mode:"cors",
                headers: {

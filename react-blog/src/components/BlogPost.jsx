@@ -7,6 +7,7 @@ const BlogPost = props => {
     const [title, setTitle] = React.useState("");
     const [error, setError] = React.useState(false);
     const [posted, setPosted] = React.useState(false);
+    const urlPath = window.location.origin;
     
     const textRef = React.useRef("");
     const titleRef = React.useRef("");
@@ -48,7 +49,7 @@ const BlogPost = props => {
         let titleData = title["title"];
         let textData = text["text"];
         
-        fetch("http://localhost:5000/api/post_blog", {
+        fetch(`${urlPath}/api/post_blog`, {
             method:"POST",
             mode:"cors",
             headers:{

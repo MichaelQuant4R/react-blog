@@ -17,7 +17,8 @@ class Blog extends React.Component{
             loading: true,
             exist: false,
             timestamp: null,
-            image: "No image..."
+            image: "No image...",
+            urlPath:window.location.origin
         }
         
         this.fetchBlog = this.fetchBlog.bind(this);
@@ -26,7 +27,7 @@ class Blog extends React.Component{
      fetchBlog = async (blogId) => {
         console.log("FETCH BLOG DATA!");
         
-        fetch(`http://localhost:5000/api/blog/${blogId}`, {
+        fetch(`${this.state.urlPath}/api/blog/${blogId}`, {
             method:"GET",
             mode: "cors",
             headers:{

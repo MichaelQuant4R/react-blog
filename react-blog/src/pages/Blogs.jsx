@@ -19,6 +19,8 @@ const Blogs = () => {
     const [data, setData] = React.useState(null);
     const [noMoreData, setNoMoreData] = React.useState(false);
     
+    const urlPath = window.location.origin;
+    
     const maxRef = useRef(0);
     
     const [postList, setPostList] = useState({
@@ -50,7 +52,7 @@ const Blogs = () => {
         console.log("FETCH!", page);
         // NOT TRUE = FALSE, NOT FALSE = TRUE
         if(!noMoreData){
-        fetch(`http://localhost:5000/api/blog_page/${page}`,{
+        fetch(`${urlPath}/api/blog_page/${page}`,{
             method:"GET",
             mode: "cors",
             headers:{
