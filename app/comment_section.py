@@ -8,8 +8,8 @@ app_com = Blueprint("comment_section", __name__)
 
 
 @app_com.route("/api/new_comment", methods = ["POST"])
-@jwt_required
 @cross_origin
+@jwt_required
 def new_comment():
     
     data = request.get_json()
