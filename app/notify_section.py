@@ -8,7 +8,7 @@ app_bell = Blueprint("notify_section", __name__)
 
 
 @app_bell.route("/api/notify/<int:id>", methods = ["GET"])
-@cross_origin
+@cross_origin()
 @jwt_required()
 def get_notify(id):
     
@@ -58,7 +58,7 @@ def get_notify(id):
 
 
 @app_bell.route("/api/new_notify/<int:id>", methods = ["GET"])
-@cross_origin
+@cross_origin()
 @jwt_required()
 def new_notify(id):
 
@@ -69,7 +69,7 @@ def new_notify(id):
 
 
 @app_bell.route("/api/clear_bell_number", methods = ["POST"])
-@cross_origin
+@cross_origin()
 @jwt_required()
 def clear_bell_number():
     

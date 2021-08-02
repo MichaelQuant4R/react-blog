@@ -11,7 +11,8 @@ from datetime import datetime as dt
 from datetime import timedelta
 from .config import (DATABASE_URL, JWT_SECRET_KEY)
 
-app = Flask(__name__, static_folder="react-blog/build", static_url_path="")
+# app = Flask(__name__, static_folder="react-blog/build", static_url_path="")
+app = Flask(__name__)
 
 gravatar = Gravatar(app,
                     size=100,
@@ -29,10 +30,14 @@ gravatar = Gravatar(app,
 cors = CORS(app, support_credentials = True)
 
 
-#file_path = os.getcwd() + "\database.db"
+# file_path = os.getcwd() + "\database.db"
 
 app.config["JWT_SECRET_KEY"] = JWT_SECRET_KEY
 app.config["SQLALCHEMY_DATABASE_URI"] =  DATABASE_URL
+# app.config["JWT_SECRET_KEY"] = "super secret"
+# app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + file_path
+
+
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["JWT_SECRET_KEY"] = "super-secret"  # Change this!
 app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
