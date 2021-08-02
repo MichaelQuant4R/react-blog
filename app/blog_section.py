@@ -9,8 +9,8 @@ app_blog = Blueprint("blog_section", __name__)
 
 
 @app_blog.route("/api/post_blog", methods = ["POST"])
-@jwt_required()
-@cross_origin()
+@jwt_required
+@cross_origin
 def post_blog():
     
     data = request.get_json()
@@ -39,7 +39,7 @@ def post_blog():
 
 
 @app_blog.route("/api/get_blogs", methods = ["GET"])
-@cross_origin()
+@cross_origin
 def get_blogs():
     
     print("GET BLOGS!")
@@ -67,7 +67,7 @@ def get_blogs():
 
 
 @app_blog.route("/api/blog/<int:blog_id>", methods = ["GET"])
-@cross_origin()
+@cross_origin
 def one_blog(blog_id):
     
     check = False
@@ -85,7 +85,7 @@ def one_blog(blog_id):
 
 
 @app_blog.route("/api/blog_page/<int:page>", methods = ["GET"])
-@cross_origin()
+@cross_origin
 def blog_page(page):
     
     blogs = db.session.query(Blog).order_by(Blog.id.desc()).all()
@@ -122,7 +122,7 @@ def blog_page(page):
 
 
 @app_blog.route("/api/blog_scroll/<int:page>", methods = ["GET"])
-@cross_origin()
+@cross_origin
 def blog_scroll(page=1):
     
     print("PAGE!", page)

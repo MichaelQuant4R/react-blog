@@ -36,7 +36,7 @@ def user_lookup_callback(_jwt_header, jwt_data):
 
 
 @app.route("/api/signup", methods = ["POST"])
-@cross_origin()
+@cross_origin
 def signup():
     
     data = request.get_json()
@@ -71,7 +71,7 @@ def signup():
 
 
 @app.route("/api/login", methods = ["POST"])
-@cross_origin()
+@cross_origin
 def login():
     
     data = request.get_json()
@@ -106,8 +106,8 @@ def login():
 
 
 @app.route("/api/logout", methods = ["POST"])
-@jwt_required()
-@cross_origin()
+@jwt_required
+@cross_origin
 def logout():
     
     data = request.get_json()
@@ -136,8 +136,8 @@ def logout():
 
 
 @app.route("/api/user", methods = ["GET"])
-@jwt_required()
-@cross_origin()
+@jwt_required
+@cross_origin
 def profile():
     
     
@@ -154,8 +154,8 @@ def profile():
 
 
 @app.route("/api/auth", methods = ["GET"])
-@jwt_required()
-@cross_origin()
+@jwt_required
+@cross_origin
 def auth():
     
     print("AUTH!", current_user)
@@ -175,7 +175,7 @@ def auth():
 
 
 @app.route("/api/check_profile", methods = ["POST"])
-@cross_origin()
+@cross_origin
 def check_profile():
     print("CHECK PROFILE!")
     
@@ -199,7 +199,7 @@ def check_profile():
 
 
 @app.route("/api/view_profile/<string:username>/<string:id>", methods = ["GET"])
-@cross_origin()
+@cross_origin
 def view_profile(username, id):
     print("VIEW PROFILE!")
     print(username, id)
@@ -221,7 +221,7 @@ def view_profile(username, id):
 
 
 @app.route("/api/users", methods = ["GET"])
-@cross_origin()
+@cross_origin
 def all_users():
     
     
