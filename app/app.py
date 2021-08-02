@@ -107,7 +107,7 @@ def login():
 
 @app.route("/api/logout", methods = ["POST"])
 @cross_origin
-@jwt_required
+@jwt_required()
 def logout():
     
     data = request.get_json()
@@ -137,7 +137,7 @@ def logout():
 
 @app.route("/api/user", methods = ["GET"])
 @cross_origin
-@jwt_required
+@jwt_required()
 def profile():
     
     
@@ -155,7 +155,7 @@ def profile():
 
 @app.route("/api/auth", methods = ["GET"])
 @cross_origin
-@jwt_required
+@jwt_required()
 def auth():
     
     print("AUTH!", current_user)
