@@ -9,7 +9,7 @@ const Login = props => {
     
     const emailRef = React.useRef("");
     const passwordRef = React.useRef("");
-    const urlPath = window.location.origin;
+    const urlPath = `https://holistic-blogs.herokuapp.com`;
     const {user, setUser} = React.useContext(User);
     
     const history = useHistory();

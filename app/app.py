@@ -238,7 +238,15 @@ def all_users():
 
 
 
-
+@app.route("/api/test", methods = ["GET"])
+@cross_origin()
+def test_api():
+    print("TESTING API !!!!!")
+    test_list = [{1:"Testing 1"}, 
+                 {2: "Testing 2"},
+                 {3: "Testing 3"}]
+    
+    return jsonify({"test": test_list})
 
 
 if __name__ == "__main__":

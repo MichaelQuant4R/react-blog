@@ -11,7 +11,7 @@ const Comment = props => {
     const {username, title, id} = useParams();
     
     const [comments, setComments] = React.useState([]);
-    const urlPath = window.location.origin;
+    const urlPath = `https://holistic-blogs.herokuapp.com`;
     
     const fetchComments = async (blogID) => {
         

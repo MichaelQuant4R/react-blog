@@ -18,7 +18,7 @@ class Blog extends React.Component{
             exist: false,
             timestamp: null,
             image: "No image...",
-            urlPath:window.location.origin
+            urlPath:`https://holistic-blogs.herokuapp.com`
         }
         
         this.fetchBlog = this.fetchBlog.bind(this);

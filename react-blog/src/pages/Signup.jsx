@@ -15,7 +15,7 @@ const Signup = props => {
     const [password, setPassword] = React.useState("");
     const [confirmPassword, setConfirmPassword] = React.useState("");
     const [isSignedUp, setIsSignedUp] = React.useState(false);
-    const urlPath = window.location.origin;
+    const urlPath = `https://holistic-blogs.herokuapp.com`;
     
     const handleSubmit = (e) => {
         

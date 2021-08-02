@@ -37,7 +37,7 @@ const Bell = props => {
     const [loading, setLoading] = React.useState(true);
     const [clickedBell, setClickedBell] = React.useState(false);
     
-    const urlPath = window.location.origin;
+    const urlPath = `https://holistic-blogs.herokuapp.com`;
     
     const [toggleBell, setToggleBell] = React.useState(bellHide);
     

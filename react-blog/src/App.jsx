@@ -13,6 +13,7 @@ const App = props =>  {
     const [id, setId] = React.useState("");
     const history = useHistory();
     const value = React.useMemo(() => ({user, setUser}), [user, setUser]);
+    const urlPath = `https://holistic-blogs.herokuapp.com`;
 
     const HandleLogout = (e) => {
         console.log("LOGOUT USER FROM APP");
@@ -59,7 +60,7 @@ const App = props =>  {
             
             let cacheList = [];
             
-            fetch("http://localhost:5000/api/auth",{
+            fetch(`${urlPath}/api/auth`,{
                 
                 method:"GET",
                 mode:"cors",

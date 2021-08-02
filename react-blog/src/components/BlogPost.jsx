@@ -7,7 +7,7 @@ const BlogPost = props => {
     const [title, setTitle] = React.useState("");
     const [error, setError] = React.useState(false);
     const [posted, setPosted] = React.useState(false);
-    const urlPath = window.location.origin;
+    const urlPath = `https://holistic-blogs.herokuapp.com`;
     
     const textRef = React.useRef("");
     const titleRef = React.useRef("");

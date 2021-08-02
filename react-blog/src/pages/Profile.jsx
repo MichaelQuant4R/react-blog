@@ -21,7 +21,7 @@ class Profile extends React.Component{
             user:null,
             jwtId:null,
             user:"No data",
-            urlPath:window.location.origin
+            urlPath:`https://holistic-blogs.herokuapp.com`
         }
         
         this.handleInfo = this.handleInfo.bind(this);

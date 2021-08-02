@@ -19,7 +19,7 @@ const Blogs = () => {
     const [data, setData] = React.useState(null);
     const [noMoreData, setNoMoreData] = React.useState(false);
     
-    const urlPath = window.location.origin;
+    const urlPath = `https://holistic-blogs.herokuapp.com`;
     
     const maxRef = useRef(0);
     
