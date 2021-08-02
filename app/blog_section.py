@@ -9,8 +9,8 @@ app_blog = Blueprint("blog_section", __name__)
 
 
 @app_blog.route("/api/post_blog", methods = ["POST"])
-@cross_origin
 @jwt_required()
+@cross_origin
 def post_blog():
     
     data = request.get_json()
