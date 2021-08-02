@@ -11,7 +11,7 @@ from datetime import datetime as dt
 from datetime import timedelta
 from .config import (DATABASE_URL, JWT_SECRET_KEY)
 
-app = Flask(__name__, static_folder="react-blog/build", static_url_path="")
+app = Flask(__name__, static_folder="app/react-blog/build", static_url_path="")
 # app = Flask(__name__)
 
 gravatar = Gravatar(app,

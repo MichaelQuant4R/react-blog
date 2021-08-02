@@ -14,6 +14,7 @@ app.register_blueprint(app_blog)
 # identity when creating JWTs and converts it to a JSON serializable format.
 
 @app.route("/")
+@cross_origin()
 def serve():
     
     return send_from_directory(app.static_folder, "index.html")
